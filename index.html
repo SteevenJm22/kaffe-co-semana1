@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaffe & Co. | Cafetería de Especialidad y Coworking</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menú y Pases</a></li>
+                <li><a href="#reservas">Reservar Espacio</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+            </ul>
+        </nav>
+
+        <h1>Kaffe & Co.: Café de Altura y Espacio de Trabajo</h1>
+        <p>Internet de fibra óptica de alta velocidad, enchufes en cada mesa y el mejor grano local.</p>
+    </header>
+
+    <main>
+        <!-- Portada visual -->
+        <section>
+            <img 
+                src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&auto=format&fit=crop&q=80" 
+                alt="Barra de café de especialidad e interior iluminado para trabajar con laptop" 
+                width="600" 
+                height="400"
+            >
+        </section>
+
+        <!-- Catálogo de productos y servicios -->
+        <section id="menu">
+            <h2>Nuestro Menú y Pases de Coworking</h2>
+
+            <article>
+                <h3>V60 Filtrado de Origen</h3>
+                <p>Notas achocolatadas y cítricas, preparado al momento en mesa.</p>
+                <p><strong>Precio:</strong> $3.50</p>
+            </article>
+
+            <article>
+                <h3>Pase Diario de Coworking</h3>
+                <p>Acceso de 08:00 a 19:00 a escritorio ergonómico, Wi-Fi simétrico y 2 cafés incluidos.</p>
+                <p><strong>Precio:</strong> $12.00</p>
+            </article>
+
+            <article>
+                <h3>Sala de Reuniones Privada (Por Hora)</h3>
+                <p>Capacidad para 6 personas, pantalla para proyecciones y pizarra acrílica.</p>
+                <p><strong>Precio:</strong> $15.00</p>
+            </article>
+        </section>
+
+        <!-- Promoción complementaria -->
+        <aside>
+            <h3>Beneficio Freelance y Estudiantes</h3>
+            <p>Adquiere una membresía semanal de coworking y recibe un 15% de descuento en toda nuestra pastelería artesanal.</p>
+        </aside>
+
+        <!-- Sistema de captación de reservas -->
+        <section id="reservas">
+            <h2>Asegura tu Mesa o Sala</h2>
+            <ol>
+                <li>Ingresa tus datos de contacto en el formulario.</li>
+                <li>Elige la modalidad de espacio y la fecha de tu visita.</li>
+                <li>Presenta tu correo de confirmación al llegar al local.</li>
+            </ol>
+
+            <form action="#" method="GET">
+                <div>
+                    <label for="nombre">Nombre completo:</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        name="cliente_nombre" 
+                        placeholder="Ej. Camila Vargas" 
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="correo">Correo electrónico:</label>
+                    <input 
+                        type="email" 
+                        id="correo" 
+                        name="cliente_email" 
+                        placeholder="camila@ejemplo.com" 
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="espacio">Tipo de espacio requerido:</label>
+                    <select id="espacio" name="tipo_espacio" required>
+                        <option value="">-- Elige una opción --</option>
+                        <option value="mesa_individual">Escritorio Individual (Zona Silenciosa)</option>
+                        <option value="mesa_compartida">Mesa Colaborativa</option>
+                        <option value="sala_privada">Sala de Reuniones (6 personas)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="fecha">Fecha de visita:</label>
+                    <input 
+                        type="date" 
+                        id="fecha" 
+                        name="fecha_reserva" 
+                        required
+                    >
+                </div>
+
+                <button type="submit">Solicitar Reserva</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="ubicacion">
+        <h2>Horarios y Contacto Directo</h2>
+        <p>Lunes a Sábado de 08:00 a 20:00.</p>
+        <p>
+            ¿Necesitas reservar para un evento privado? 
+            <a href="https://wa.me/593999999999?text=Hola,%20quisiera%20cotizar%20un%20evento" target="_blank" rel="noopener noreferrer">
+                Contáctanos por WhatsApp
+            </a>
+        </p>
+        <p>© 2026 Kaffe & Co. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
