@@ -7,7 +7,8 @@
     --color-acento: hsl(38, 85%, 55%);
     --color-borde: hsl(30, 20%, 85%);
     --fuente-base: 'Inter', system-ui, -apple-system, sans-serif;
-    --ancho-maximo: 52rem; /* Equivale a 832px con base estándar */
+    --ancho-maximo: 52rem;
+    /* Equivale a 832px con base estándar */
 }
 
 /* 2. RESET UNIVERSAL E IMÁGENES FLUIDAS */
@@ -33,7 +34,9 @@ body {
     line-height: 1.6;
 }
 
-header, main, footer {
+header,
+main,
+footer {
     max-width: var(--ancho-maximo);
     margin: 0 auto;
     padding: 1.5rem;
@@ -130,4 +133,91 @@ a {
     align-items: center;
     gap: 1.5rem;
     list-style: none;
+}
+
+/* 6. CUADRÍCULA FLEXIBLE DE TARJETAS */
+.catalogo-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.tarjeta {
+    /* Crece (1), se encoge (1) y mantiene una base mínima de 15rem (240px) */
+    flex: 1 1 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primario);
+}
+
+/* 7. ESTILOS DE FORMULARIO Y ESTADOS INTERACTIVOS */
+.lista-pasos {
+    margin-left: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.formulario-reserva {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+.campo-grupo {
+    margin-bottom: 1.25rem;
+}
+
+.campo-grupo label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.375rem;
+}
+
+.campo-grupo input,
+.campo-grupo select {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.375rem;
+    transition: border-color 0.2s ease, outline 0.2s ease;
+}
+
+/* Estado activo al escribir o navegar con teclado */
+.campo-grupo input:focus,
+.campo-grupo select:focus {
+    outline: 2px solid var(--color-primario);
+    border-color: var(--color-primario);
+    background-color: var(--color-superficie);
+}
+
+.boton {
+    width: 100%;
+    background-color: var(--color-primario);
+    color: var(--color-superficie);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.boton:hover {
+    opacity: 0.9;
 }
