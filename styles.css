@@ -112,12 +112,13 @@ a {
     cursor: pointer;
 }
 
-/* 5. NAVEGACIÓN CON FLEXBOX */
+/* 5. NAVEGACIÓN BASE (MOBILE-FIRST: Apilada en pantallas pequeñas) */
 .navegacion {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding-bottom: 1.5rem;
+    gap: 0.75rem;
+    padding-bottom: 1.25rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--color-borde);
 }
@@ -130,9 +131,16 @@ a {
 
 .menu-lista {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
     list-style: none;
+}
+
+/* En móvil las filas del formulario simplemente apilan sus hijos en bloque */
+.fila-formulario {
+    display: flex;
+    flex-direction: column;
 }
 
 /* 6. CUADRÍCULA FLEXIBLE DE TARJETAS */
@@ -220,4 +228,44 @@ a {
 
 .boton:hover {
     opacity: 0.9;
+}
+
+/* 8. MEDIA QUERIES: Expansión para Tablets y Escritorio (768px o más) */
+@media (min-width: 768px) {
+
+    header,
+    main,
+    footer {
+        padding: 2.5rem 2rem;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+    }
+
+    /* La barra de navegación pasa de columna a fila horizontal */
+    .navegacion {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .menu-lista {
+        gap: 1.75rem;
+    }
+
+    /* Los campos del formulario se colocan de dos en dos */
+    .fila-formulario {
+        flex-direction: row;
+        gap: 1.25rem;
+    }
+
+    .fila-formulario .campo-grupo {
+        flex: 1;
+    }
+
+    /* El botón deja de ocupar el 100% y toma un ancho compacto */
+    .boton {
+        width: auto;
+        padding: 0.85rem 2.5rem;
+    }
 }

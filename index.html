@@ -84,29 +84,35 @@
       </ol>
 
       <form action="#" method="GET" class="formulario-reserva">
-        <div class="campo-grupo">
-          <label for="nombre">Nombre completo:</label>
-          <input type="text" id="nombre" name="cliente_nombre" placeholder="Ej. Camila Vargas" required>
+        <!-- Fila 1: Nombre y Correo lado a lado en escritorio, apilados en móvil -->
+        <div class="fila-formulario">
+          <div class="campo-grupo">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="cliente_nombre" placeholder="Ej. Camila Vargas" required>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" name="cliente_email" placeholder="camila@ejemplo.com" required>
+          </div>
         </div>
 
-        <div class="campo-grupo">
-          <label for="correo">Correo electrónico:</label>
-          <input type="email" id="correo" name="cliente_email" placeholder="camila@ejemplo.com" required>
-        </div>
+        <!-- Fila 2: Espacio y Fecha lado a lado en escritorio, apilados en móvil -->
+        <div class="fila-formulario">
+          <div class="campo-grupo">
+            <label for="espacio">Tipo de espacio requerido:</label>
+            <select id="espacio" name="tipo_espacio" required>
+              <option value="">-- Elige una opción --</option>
+              <option value="mesa_individual">Escritorio Individual (Zona Silenciosa)</option>
+              <option value="mesa_compartida">Mesa Colaborativa</option>
+              <option value="sala_privada">Sala de Reuniones</option>
+            </select>
+          </div>
 
-        <div class="campo-grupo">
-          <label for="espacio">Tipo de espacio requerido:</label>
-          <select id="espacio" name="tipo_espacio" required>
-            <option value="">-- Elige una opción --</option>
-            <option value="mesa_individual">Escritorio Individual (Zona Silenciosa)</option>
-            <option value="mesa_compartida">Mesa Colaborativa</option>
-            <option value="sala_privada">Sala de Reuniones</option>
-          </select>
-        </div>
-
-        <div class="campo-grupo">
-          <label for="fecha">Fecha de visita:</label>
-          <input type="date" id="fecha" name="fecha_reserva" required>
+          <div class="campo-grupo">
+            <label for="fecha">Fecha de visita:</label>
+            <input type="date" id="fecha" name="fecha_reserva" required>
+          </div>
         </div>
 
         <button type="submit" class="boton">Solicitar Reserva</button>
